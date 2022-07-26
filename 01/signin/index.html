@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <article class="l-app">
+        <h1>Sign In</h1>
+        <form 
+            class="l-form" 
+            name="auth"
+        >
+            <div class="c-form__group">
+                <label 
+                    class="c-form__label"
+                    for="user"
+                >
+                    Usuário
+                </label>
+                <input
+                    class="c-form__control"
+                    id="user"
+                    name="usuario"
+                    type="email"
+                    placeholder="E-mail"
+                >
+            </div>
+            <div class="c-form__group">
+                <label 
+                    class="c-form__label"
+                    for="password"
+                >
+                    Senha
+                </label>
+                <input
+                    class="c-form__control"
+                    id="password"
+                    name="senha"
+                    type="password"
+                    placeholder="Senha"
+                >
+            </div>
+            <div>
+                <button 
+                    class="c-btn"
+                    type="submit"
+                >
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </article>
+</body>
+
+</html>
