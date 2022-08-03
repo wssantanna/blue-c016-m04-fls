@@ -1,9 +1,21 @@
 
-function Item() {
+function Item({ tarefa }) {
+
+    const { id, descricao, concluido } = tarefa;
+
     return (
-        <div class="alert alert-success" role="alert">
-            <h2 class="h6 m-0">There are no tasks! 🙌🎉</h2>
-        </div>
+        <li class="list-group-item py-3">
+            <input 
+                class="form-check-input me-3" 
+                type="checkbox" 
+                id={`Checkbox-${id}`} 
+            />
+            <label 
+                class="form-check-label" 
+                for={`Checkbox-${id}`}>
+                    {descricao}
+            </label>
+        </li>
     );
 }
 
@@ -32,7 +44,9 @@ export default function Lista() {
                 <section class="py-5">
                     <h2 class="h5 mb-4">My tasks</h2>
                     <ul class="list-group" data-todo-target="list">
-                        <Item />
+                        {
+                            Tarefas.map(tarefa => <Item tarefa={tarefa} />)
+                        }
                     </ul>
                 </section>
             </div>
