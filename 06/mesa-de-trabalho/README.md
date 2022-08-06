@@ -31,3 +31,5 @@ Com base no código-fonte implemente a listagem de todas as tarefas.
 ### BONUS
 
 - [ ] Crie um componente capaz de paginar todas as tarefas, considerando cinco por página.
+
+> Referência: Componente [Pagination](https://getbootstrap.com/docs/5.2/components/pagination/) do Bootstrap.
