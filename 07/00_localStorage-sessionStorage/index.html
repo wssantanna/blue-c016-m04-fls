@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 07 - Revisão para salvar meu Projeto</title>
+</head>
+
+<body>
+
+
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+    </div>
+    <br>
+    <div>
+        <button id="btnSalvar">Enviar</button>
+        <br><br>
+        <button id="btnLimpar">Limpar a memória</button>
+    </div>
+
+    <article id="nomes">
+
+    </article>
+
+    <script type="text/javascript">
+
+        // Acessar o valor
+        let persistencia = localStorage.getItem("nome");
+
+        if (persistencia != null) {
+
+            nomes.innerHTML += `<h1>${nome.value}</h1>`;
+
+            btnLimpar.addEventListener('click', function () {
+                localStorage.removeItem("nome");
+            })
+        }
+        else {
+            btnSalvar.addEventListener('click', () => {
+                // Definir o valor
+                localStorage.setItem("nome", nome.value);
+                // 
+                nomes.innerHTML += `<h1>${nome.value}</h1>`;
+            })
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
