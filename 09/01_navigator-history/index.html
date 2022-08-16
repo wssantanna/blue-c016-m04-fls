@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 - navigator, history</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Geolocation - Geo localização do usuário
+        //console.log(getMyLocation());
+        function getMyLocation() {
+
+            let coords;
+
+            const { getCurrentPosition } = window.navigator.geolocation;
+
+            getCurrentPosition(posicao => {
+                const { latitude, longitude } = posicao.coords;
+                coords = latitude, longitude;
+            });
+
+            return coords;
+        }
+
+        // History - Histórico de navegação
+        console.log(window.history)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+
+<body onload="getResult()">
+
+    <h1>Resultado</h1>
+
+    <div id="result"></div>
+
+    <button onclick="back()">Voltar</button>
+
+    <script>
+        /*
+            URL - Uniform Resource Locator (Domínio - ex google.com)
+            URN - Uniform Resource Name (rota/index.html)
+            URI - Uniform Resource Identifier (procoloco, URL + URI)
+
+            Framentar nosso endpoint = URI.
+        */
+        console.log('-- Location', window.location);
+        console.log('host', window.location.host);
+        console.log('protocol', window.location.protocol);
+        console.log('pathname', window.location.pathname);
+        console.log('search', window.location.search);
+        console.log('hash', window.location.hash);
+        console.log('origin', window.location.origin);
+
+        console.log('-- URL Search Params');
+        // 
+        let searchParams = new URLSearchParams(window.location.search);
+        // Capturar a primeira instância.
+        console.log('', searchParams.get('nome'));
+        console.log(searchParams.get('sobrenome'))
+        // Capturar todas as intâncias.
+        console.log(searchParams.getAll('favoritos'))
+        // Definir um novo parametro. (comentei o comando, senão ele irá sobrescrever a propriedade idade vinda do formulário)
+        //searchParams.set('idade', 32);
+        console.log(searchParams.get('idade'));
+        // Validar se existe a propriedade
+        console.log(searchParams.has('idade'));
+        // Deletar um paramatro. (comentei o comando, senão ele irá remover a propriedade)
+        //searchParams.delete('idade');
+        console.log(searchParams.get('idade'));
+        // Validar se existe a propriedade.
+        console.log(searchParams.has('idade'));
+        // Capturar todo filtro como string.
+        console.log(searchParams.toString());
+
+
+        function getResult() {
+
+            let name = searchParams.get('nome');
+            let lastname = searchParams.get('sobrenome');
+            let favorites = searchParams.getAll('favoritos');
+            let age = searchParams.get('idade');
+            let params = searchParams.toString();
+
+            result.innerHTML = `
+                <p>Nome: ${name}</p>
+                <p>Sobrenome: ${lastname}</p>
+                <p>Idade: ${age}</p>
+                <p>Parametros: ${params}</p>
+                <p>Favoritos</p>
+            `;
+
+            favorites.map(favorite => result.innerHTML += `<p>${favorite}</p>`)
+        }
+
+        function back() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
