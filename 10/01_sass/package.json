@@ -1,0 +1,19 @@
+{
+  "name": "01_sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/global.scss:public/style.css",
+    "dev": "sass --watch src/global.scss:public/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}
